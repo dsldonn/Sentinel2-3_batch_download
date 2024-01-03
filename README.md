@@ -35,8 +35,8 @@ pip install requests pandas
 ### 申请哥白尼数据空间账户
 进入网站申请一个账户
 
--网址：https://dataspace.copernicus.eu/
-注：qq邮箱可能收不到验证码
+- 网址：https://dataspace.copernicus.eu/
+- 注：qq邮箱可能收不到验证码
 
 ### 参数配置
 在运行脚本之前，您需要设置以下参数：
