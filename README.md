@@ -1,6 +1,5 @@
-# Sentinel2-3_batch_download
-Sentinel卫星数据批量下载
 # Sentinel 卫星数据下载脚本使用说明
+Sentinel卫星数据批量下载
 
 ## 简介
 
@@ -17,11 +16,11 @@ Sentinel卫星数据批量下载
 
 ## 环境要求
 
-- Python 3.x
+- Python 3.6
 - 安装以下Python库：`requests`, `pandas`
 - 网络连接
 - 足够的存储空间以保存下载的数据文件
-- 系统中需安装`wget`工具
+- 系统中需安装`wget`工具，windows可参考该文章进行配置：http://t.csdnimg.cn/EsZ14
 
 ## 安装依赖库
 
@@ -33,6 +32,13 @@ pip install requests pandas
 
 ## 使用前的配置
 
+### 申请哥白尼数据空间账户
+进入网站申请一个账户
+
+-网址：https://dataspace.copernicus.eu/
+注：qq邮箱可能收不到验证码
+
+### 参数配置
 在运行脚本之前，您需要设置以下参数：
 
 - `output_dir`: 保存下载数据的目录路径。
@@ -61,7 +67,7 @@ python sentinel_data_download.py
 以下是一个示例配置，该配置将会下载`SENTINEL-3`数据，日期为`2023-12-28`，地理坐标为一给定区域：
 
 ```python
-output_dir = r"E:\SatelliteData\SENTINEL"
+output_dir = r"E:\SatelliteData\SENTINEL-3"
 email = "your.email@example.com"
 password = "your_password"
 startDate = '2023-12-28'
@@ -71,6 +77,19 @@ satelliteName = 'SENTINEL-3'
 contains_str = 'OL_1_EFR___'
 timeliness = 'NR'
 satelliteplatform = 'S3A'
+```
+
+以下配置将会下载`SENTINEL-2`数据：
+```python
+output_dir = r"E:\SatelliteData\SENTINEL-2"
+email = "your.email@example.com"
+password = "your_password"
+startDate = '2023-12-28'
+endDate = '2023-12-28'
+coordinates_str = "-159 23, -155 23, -155 19, -159 19, -159 23"
+satelliteName = 'SENTINEL-2'
+contains_str = 'MSIL1C'
+satelliteplatform = 'S2A'
 ```
 
 请确保将示例中的路径和凭证替换为您自己的信息。
@@ -89,8 +108,7 @@ satelliteplatform = 'S3A'
 
 如遇到任何问题或需要技术支持，请通过以下方式联系开发者：
 
-- 电子邮箱: your.email@example.com
-- Github: https://github.com/yourgithub
+- 电子邮箱: 757829990@qq.com
 
 ## 许可证
 
